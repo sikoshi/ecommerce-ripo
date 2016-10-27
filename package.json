@@ -1,0 +1,24 @@
+{
+  "name": "ecommerce-ripo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sikoshi/ecommerce-ripo.git"
+  },
+  "author": "Serik RAKHMETOV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sikoshi/ecommerce-ripo/issues"
+  },
+  "homepage": "https://github.com/sikoshi/ecommerce-ripo#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "fs": "0.0.1-security",
+    "request": "^2.76.0"
+  }
+}
