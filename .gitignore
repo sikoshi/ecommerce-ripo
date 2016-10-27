@@ -1,4 +1,8 @@
 .idea
+
+output
+input
+
 # Logs
 logs
 *.log
