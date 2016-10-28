@@ -14,6 +14,17 @@ var sitemap_content = fs.readFileSync(sitemap_file, 'utf8');
 
 var sitemap = cheerio.load(sitemap_content, {xmlMode: true});
 
+var counter = 0;
+
+sitemap('url').map(function(i, url) {
+	counter++;
+});
+
+console.log(counter);
+
+
+return false;
+
 sitemap('url').map(function(i, url) {
 
 	var page_url     = cheerio(url).find('loc').text();

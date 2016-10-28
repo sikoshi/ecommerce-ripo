@@ -19,6 +19,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "fs": "0.0.1-security",
-    "request": "^2.76.0"
+    "request": "^2.76.0",
+    "utf8": "^2.1.2"
   }
 }
