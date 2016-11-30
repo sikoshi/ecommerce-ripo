@@ -32,7 +32,7 @@ function process_html(html)
 	product['url']         = $('link[rel="canonical"]').attr('href');
 	product['id']          = $('.mp-small_rate').attr('mp-prod_id');
 	product['title']       = $('h1.name').text().trim(); 
-	product['description'] = $('.descriptionContent.rawContent').html(); 
+	product['description'] = $('.descriptionContent.rawContent').html().trim(); 
 	product['specs']       = [];
 	product['photos']      = [];
 	product['breadcrumbs'] = [];
