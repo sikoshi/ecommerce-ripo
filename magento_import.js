@@ -22,16 +22,14 @@ fs.readdir(input_dir, (err, files) => {
 		{
 			fs.writeFileSync(file_name, file_header);
 		}
-		
-		//if (file_counter < 5000)
-		//{
+
+		/*if (file_counter < 100)
+		{*/
 			var json_content = JSON.parse(fs.readFileSync(input_dir + file, 'utf8'));
 
 			dump_line = process_json(json_content, file_counter);
 
-			fs.appendFile(file_name, dump_line, function (err) {
-
-			});
+			fs.appendFile(file_name, dump_line, function (err) {});
 
 			file_counter++;
 
@@ -56,6 +54,11 @@ function format_description (str, is_xhtml) {
 
 function process_json (data)
 {
+	if (data['id'].length > 10)
+	{
+		return '';
+	}
+
 	var category = '';
 
 	if (data['breadcrumbs'].length > 0)
@@ -145,13 +148,20 @@ function process_json (data)
 	dump_line += '|';                         // hide_from_product_page
 	dump_line += '|';                         // custom_options*/
 	dump_line += 'fixed|';                    // bundle_price_type
-	dump_line += 'fixed';                    // bundle_sku_type
+	dump_line += 'fixed|';                    // bundle_sku_type
 	/*dump_line += '|';                         // bundle_price_view
 	dump_line += '|';                         // bundle_weight_type
 	dump_line += '|';                         // bundle_values
 	dump_line += '';                          // associated_skus*/
 
-	//base_image
+	if (data['photos'].length > 0)
+	{
+		dump_line += '"' + data['photos'][0].replace('https://www.alser.kz/static/', '') + '"';
+	}
+	else
+	{
+		dump_line += '';
+	}
 	
 	dump_line += '\r\n';
 
